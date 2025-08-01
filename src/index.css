@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional AI Researcher Design System */
+
+@layer base {
+  :root {
+    /* Core color palette */
+    --background: 0 0% 100%;
+    --foreground: 221 17% 13%;
+    
+    /* Professional blue-gray palette */
+    --primary: 218 65% 16%;
+    --primary-foreground: 0 0% 98%;
+    --primary-accent: 221 45% 25%;
+    --primary-light: 218 30% 90%;
+    
+    /* Tech-inspired accent colors */
+    --accent-blue: 218 85% 55%;
+    --accent-purple: 261 55% 50%;
+    --accent-teal: 176 70% 41%;
+    
+    /* Neutral system */
+    --card: 0 0% 100%;
+    --card-foreground: 221 17% 13%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 221 17% 13%;
+    --muted: 220 9% 96%;
+    --muted-foreground: 221 10% 46%;
+    
+    /* Interactive elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 218 65% 16%;
+    --accent: 218 30% 90%;
+    --accent-foreground: 221 17% 13%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 221 17% 13%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(218 65% 16%), hsl(261 55% 50%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 14% 98%));
+    --gradient-accent: linear-gradient(90deg, hsl(218 85% 55%), hsl(176 70% 41%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(221 17% 13% / 0.1), 0 2px 4px -1px hsl(221 17% 13% / 0.06);
+    --shadow-elevated: 0 10px 15px -3px hsl(221 17% 13% / 0.1), 0 4px 6px -2px hsl(221 17% 13% / 0.05);
+    --shadow-glow: 0 0 0 1px hsl(218 85% 55% / 0.1), 0 0 20px hsl(218 85% 55% / 0.1);
+    
+    /* Typography */
+    --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 218 23% 7%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 218 85% 55%;
+    --primary-foreground: 218 23% 7%;
+    --primary-accent: 218 70% 40%;
+    --primary-light: 218 30% 15%;
+    
+    --card: 218 20% 10%;
+    --card-foreground: 210 40% 98%;
+    --secondary: 218 15% 15%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 218 15% 15%;
+    --muted-foreground: 217 10% 65%;
+    
+    --border: 218 15% 20%;
+    --input: 218 15% 20%;
+    --accent: 218 15% 15%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --popover: 218 20% 10%;
+    --popover-foreground: 210 40% 98%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-section {
+    background: var(--gradient-section);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
